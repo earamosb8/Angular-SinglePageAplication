@@ -21,10 +21,11 @@
         
     
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar Heroe" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
+      <div class="d-flex">
+        <!--agregamos la funcionalidad de buscar heroe para esto colocamos un identificador a la caja-->
+        <input class="form-control me-2" type="search" placeholder="Buscar Heroe" aria-label="Search" (keyup.enter)="buscarHeroe(buscartexto.value)" #buscartexto>
+        <button (click)="buscarHeroe(buscartexto.value)" class="btn btn-outline-success" type="button">Buscar</button>
+      </div>
     </div>
   </div>
 </nav>

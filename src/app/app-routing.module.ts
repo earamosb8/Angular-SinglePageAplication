@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
+import { HeroresultadoComponent } from './components/heroresultado/heroresultado.component';
 //rutas : la ruta del asterisco es para redoreccionar en caso tal no se encuentre la ruta
 //entre las definidas en este arreglo
 const ROUTES: Routes = [
@@ -10,6 +11,7 @@ const ROUTES: Routes = [
   {path:'about',component:AboutComponent},
   {path:'heroes',component:HeroesComponent},
   {path:'heroe/:id',component:HeroeComponent},
+  {path:'busqueda/:texto',component:HeroresultadoComponent},
   {path:'**',pathMatch :'full', redirectTo: 'home'},
 
 ];

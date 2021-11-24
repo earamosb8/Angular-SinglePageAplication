@@ -1,1 +1,18 @@
-<p>heroes works!</p>
+<h1 class="animated fadeIn fast">Heroes<small>Marvel y Dc</small></h1>
+<hr>
+
+<div class="card-columns  align-content-center  flex-warp ">
+  <!--recorremos la el arreglo de objetos heroes y extraemos cada una de sus propiedades en cada iteracion-->
+  <div *ngFor="let heroe of heroes; let i = index" class="card col-lg-4 d-inline-block my-5 animated fadeIn">
+    <img class="card-img-top img-fluid" src={{heroe.img}}  alt={{heroe.nombre}}>
+    <div class="card-body">
+      <h5 class="card-title">{{heroe.nombre}}</h5>
+      <p class="card-text">{{heroe.bio}}</p>
+      <p class="card-text"><small class="text-muted">{{heroe.casa}}</small></p>
+      <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+      <!--podemos cambiar a otra direccion utilizando un boton o una <a> ejemplo-->
+      <button (click)="verheroe(i)" type="button" class="btn btn-outline-primary col-12"> Ver mas ...</button>
+      <a [routerLink]="[ '/heroe', i ]"  class="btn btn-outline-primary">Ver mas ... link</a>
+    </div>
+  </div>
+</div>
